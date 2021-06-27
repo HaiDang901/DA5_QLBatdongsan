@@ -1,0 +1,148 @@
+<!-- NAVBAR TOP -->
+<div class="topbar d-none d-sm-block">
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-12 col-md-5">
+                <div class="topbar-left">
+                    <div class="topbar-text">
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-7">
+                <div class="list-unstyled topbar-right">
+                    <ul class="topbar-link">
+                        <li><a href="#" title="">Danh sách yêu thích</a></li>
+
+                        <li *ngIf="id!=null">
+                            <a routerLink="/customer/baidang" style="font-weight: bold;" *ngIf="user.hoTen==''">{{user.taiKhoan}} </a>
+                            <a routerLink="/customer/baidang" style="font-weight: bold;" *ngIf="user.hoTen!=''">{{user.hoTen}} </a>
+                            <a (click)="logout()" title="Đăng xuất"><img src="../../../assets/img/logout.png" style="height: 30px;"></a>
+                        </li>
+                        <li *ngIf="id == null"><a [routerLink]="[ 'customer/login' ]" title="Đăng nhập">Đăng nhập</a>
+                        </li>
+                    </ul>
+                    <ul class="topbar-sosmed">
+                        <li>
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END NAVBAR TOP -->
+<nav class="navbar navbar-hover navbar-expand-lg navbar-soft">
+    <div class="container">
+        <a class="navbar-brand" href="/">
+            <img src="../../../assets/img/logo2.jpg" alt="" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main_nav99">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="main_nav99">
+            <ul class="navbar-nav  mx-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" routerLink="/post/list/all" data-toggle="dropdown"> Nhà đất
+                        bán/cho thuê </a>
+                    <ul class="dropdown-menu animate fade-up">
+
+                        <li><a class="dropdown-item icon-arrow" routerLink="/post/list/ban"> Nhà đất bán </a>
+                            <ul class="submenu dropdown-menu  animate fade-up">
+                                <div *ngFor="let item of ban">
+                                    <li><a class="dropdown-item"
+                                            routerLink="/post/list/{{item.maLoaiBds}}">{{item.tenLoaiBds}}</a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-item icon-arrow" routerLink="/post/list/chothue"> Nhà đất cho thuê </a>
+                            <ul class="submenu dropdown-menu  animate fade-up">
+                                <div *ngFor="let item of thue">
+                                    <li><a class="dropdown-item"
+                                            routerLink="/post/list/{{item.maLoaiBds}}">{{item.tenLoaiBds}}</a>
+                                    </li>
+                                </div>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"> Cần mua - Cần thuê </a>
+                    <ul class="dropdown-menu animate fade-up">
+
+                        <li><a class="dropdown-item icon-arrow" href="#"> Nhà đất cần mua </a>
+                            <ul class="submenu dropdown-menu  animate fade-up">
+                                <div *ngFor="let item of ban">
+                                    <li><a class="dropdown-item"
+                                            routerLink="/post/list/{{item.maLoaiBds}}">{{item.tenLoaiBds}}</a>
+                                    </li>
+                                </div>
+                            </ul>
+                        </li>
+                        <li><a class="dropdown-item icon-arrow" href="#"> Nhà đất cần thuê </a>
+                            <ul class="submenu dropdown-menu  animate fade-up">
+                                <div *ngFor="let item of thue">
+                                    <li><a class="dropdown-item"
+                                            routerLink="/post/list/{{item.maLoaiBds}}">{{item.tenLoaiBds}}</a>
+                                    </li>
+                                </div>
+                            </ul>
+
+                        </li>
+                    </ul>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link " routerLink="/"> Giới thiệu </a>
+                </li>
+
+                <li class="nav-item"><a class="nav-link" routerLink="/"> Tin tức </a></li>
+            </ul>
+
+
+            <!-- Search bar.// -->
+            <ul class="navbar-nav">
+                <li>
+                    <a routerLink="customer/add-post" class="btn btn-primary text-capitalize">
+                        <i class="fa fa-plus-circle mr-1"></i> Đăng tin</a>
+                </li>
+            </ul>
+            <!-- Search content bar.// -->
+            <div class="top-search navigation-shadow">
+                <div class="container">
+                    <div class="input-group ">
+                        <form action="#">
+
+                            <div class="row no-gutters mt-3">
+                                <div class="col">
+                                    <input class="form-control border-secondary border-right-0 rounded-0" type="search"
+                                        value="" placeholder="Search " id="example-search-input4">
+                                </div>
+                                <div class="col-auto">
+                                    <a class="btn btn-outline-secondary border-left-0 rounded-0 rounded-right"
+                                        href="/search-result.html">
+                                        <i class="fa fa-search"></i>
+                                    </a>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!-- Search content bar.// -->
+        </div> <!-- navbar-collapse.// -->
+    </div>
+</nav>
+<!-- CAROUSEL -->

@@ -1,0 +1,79 @@
+<section>
+    <div class="container">
+        <!-- <div class="row">
+            <div class="col-md-8 col-lg-6 mx-auto">
+                <div class="title__head">
+                    <h2 class="text-center text-capitalize">
+                        featured properties
+                    </h2>
+                    <p class="text-center text-capitalize">handpicked exclusive properties by our team.</p>
+
+                </div>
+            </div>
+        </div> -->
+
+        <!--=========================================
+=            Section Gallery two            =
+==========================================-->
+        <div class="card__image-filter">
+            <div class="filterizr-control">
+                <ul class="list-inline filterizr-filter">
+                    <li class="list-inline-item filtr-active btn-filter">Bài đăng mới</li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="filtr-container"
+                    style="padding: 0px; position: relative; width: 100%; display: flex; flex-wrap: wrap; height: 1068px;">
+                    <!-- Post New -->
+                    <div *ngFor="let item of postNew; index as i">
+                        <a routerLink="/post/detail/{{item.maBaiDang}}">
+                            <div class="col-md-6 col-lg-4 filtr-item" data-category="1" data-title="">
+
+                                <div class="card__image card__box-v1">
+                                    <div class="card__image-header h-250">
+                                        <div class="ribbon text-capitalize" style="background-color: green;" *ngIf="item.loaiBaiDang == 1">TIN VIP</div>
+                                        <img src="../../../assets/img/{{i+1}}.jpg" alt=""
+                                            class="img-fluid w100 img-transition">
+                                    </div>
+                                    <div class="card__image-body">
+                                        <h6 class="text-capitalize" title="{{item.tieuDe}}">
+                                            {{item.tieuDe.substr(0,50)}}...
+                                        </h6>
+
+                                        <p class="text-capitalize">
+                                            <i class="fa fa-map-marker"></i>
+                                            {{item.diaChiChiTiet}}
+                                        </p>
+                                        <ul class="list-inline card__content">
+
+                                            <li class="list-inline-item">
+                                                <span>
+                                                    Diện tich <br>
+                                                    <i class="fa fa-map"></i> {{item.dienTich}} <span
+                                                        style="text-transform: lowercase;">m²</span>
+                                                </span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card__image-footer">
+                                        
+                                        <ul class="list-inline my-auto ml-auto">
+                                            <li class="list-inline-item">
+
+                                                <h6>{{item.mucGia}} {{item.donViGia}}</h6>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="clearfix"></div>
+    </div>
+</section>

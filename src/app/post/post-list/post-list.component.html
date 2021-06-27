@@ -1,0 +1,267 @@
+<div class="search__area bg__shadow">
+    <div class="container">
+        <div class="search__area-inner">
+            <div class="row">
+                <div class="col-6 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <p-dropdown [style]="{'width': '100%'}" [options]="HinhThuc" [(ngModel)]="selectedHT"
+                            [showClear]="true" optionLabel="tenHinhThuc" placeholder="Hình thức"
+                            (onChange)="selectLoai()"></p-dropdown>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <p-dropdown [style]="{'width': '100%'}" [options]="LoaiBds" [(ngModel)]="selectedLoaiBds"
+                            [showClear]="true" optionLabel="tenLoaiBds" placeholder="Loại Bất động sản"></p-dropdown>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <p-dropdown [style]="{'width': '100%'}" [options]="TinhTP" [(ngModel)]="selectedTinhTP"
+                            optionLabel="ten" [filter]="true" (onChange)="selectQH()" filterBy="ten" [showClear]="true"
+                            placeholder="Tỉnh/Thành Phố" class="p-inputtext-sm1">
+                            <ng-template pTemplate="selectedItem">
+                                <div class="country-item country-item-value" *ngIf="selectedTinhTP">
+                                    <div>{{selectedTinhTP.ten}}</div>
+                                </div>
+                            </ng-template>
+                        </p-dropdown>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <div *ngIf="selectedTinhTP!=null">
+                            <p-dropdown [style]="{'width': '100%'}" [options]="QH" [(ngModel)]="selectedQH"
+                                optionLabel="ten" [filter]="true" (onChange)="selectXP()" filterBy="ten"
+                                [showClear]="true" placeholder="Quận/Huyện" class="p-inputtext-sm1">
+                                <ng-template pTemplate="selectedItem">
+                                    <div class="country-item country-item-value" *ngIf="selectedQH">
+                                        <div>{{selectedQH.ten}}</div>
+                                    </div>
+                                </ng-template>
+                            </p-dropdown>
+                        </div>
+                        <div *ngIf="selectedTinhTP==null">
+                            <p-dropdown [style]="{'width': '100%'}" [filter]="true" filterBy="ten" [showClear]="true"
+                                placeholder="Quận/Huyện" class="p-inputtext-sm1">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <div *ngIf="selectedQH!=null">
+                            <p-dropdown [style]="{'width': '100%'}" [options]="XP" [(ngModel)]="selectedXP"
+                                optionLabel="ten" [filter]="true" filterBy="ten" [showClear]="true"
+                                placeholder="Xã/Phường" class="p-inputtext-sm1">
+                                <ng-template pTemplate="selectedItem">
+                                    <div class="country-item country-item-value" *ngIf="selectedXP">
+                                        <div>{{selectedXP.ten}}</div>
+                                    </div>
+                                </ng-template>
+                            </p-dropdown>
+                        </div>
+                        <div *ngIf="selectedQH==null">
+                            <p-dropdown [style]="{'width': '100%'}" [filter]="true" filterBy="ten" [showClear]="true"
+                                placeholder="Xã/Phường" class="p-inputtext-sm1">
+                            </p-dropdown>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <p-dropdown [style]="{'width': '100%'}" [options]="Huong" [(ngModel)]="selectedHuongNha"
+                            placeholder="Hướng nhà" optionLabel="huong"></p-dropdown>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <div class="filter__price">
+                            <h5 style="font-weight: normal; font-size: 15px;">Diện tích: {{rangeValues[0] + ' - ' + rangeValues[1]}} <span style="text-transform: lowercase;"> m²</span></h5>
+                            <p-slider [(ngModel)]="rangeValues" [min]="0" [max]="1000" [range]="true"></p-slider>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-3 col-md-3">
+                    <div class="form-group">
+                        <button class="btn btn-primary text-uppercase btn-block"> Tìm kiếm <i
+                                class="fa fa-search ml-1"></i></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- LISTING LIST -->
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="tabs__custom-v2 ">
+                            <!-- FILTER VERTICAL -->
+                            <ul class="nav nav-pills myTab" role="tablist">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" data-toggle="pill" href="#pills-tab-one" role="tab"
+                                        aria-controls="pills-tab-one" aria-selected="true">
+                                        <span class="fa fa-th-list"></span>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" data-toggle="pill" href="#pills-tab-two" role="tab"
+                                        aria-controls="pills-tab-two" aria-selected="false">
+                                        <span class="fa fa-th-large"></span></a>
+                                </li>
+                            </ul>
+
+
+
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade" id="pills-tab-one" role="tabpanel"
+                                    aria-labelledby="pills-tab-one">
+                                    <div class="row" *ngFor="let item of list; index as i">
+
+                                        <div class="col-lg-12">
+                                            <div class="card__image card__box-v1">
+                                                <div class="row no-gutters">
+                                                    <div class="col-md-4 col-lg-3 col-xl-4">
+                                                        <div class="card__image__header h-250">
+                                                            <a routerLink="/post/detail/{{item.maBaiDang}}">
+                                                                <div class="ribbon text-capitalize"
+                                                                    style="background-color: green;"
+                                                                    *ngIf="item.loaiBaiDang==1">TIN VIP
+                                                                </div>
+                                                                <img src="../../../assets/img/{{i+1}}.jpg" alt=""
+                                                                    class="img-fluid w100 img-transition">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4 col-lg-6 col-xl-5 my-auto">
+                                                        <div class="card__image__body">
+                                                            <h6>
+                                                                <a
+                                                                    routerLink="/post/detail/{{item.maBaiDang}}">{{item.tieuDe.substr(0,50)}}...</a>
+                                                            </h6>
+                                                            <div class="card__image__body-desc">
+                                                                <p class="text-capitalize">
+                                                                    <i class="fa fa-map-marker"></i>
+                                                                    {{item.diaChiChiTiet}}
+                                                                </p>
+                                                            </div>
+
+                                                            <ul class="list-inline card__content">
+
+                                                                <li class="list-inline-item">
+                                                                    <span>Diện tích <br>
+                                                                        <i class="fa fa-map"></i> {{item.dienTich}}
+                                                                        <span
+                                                                            style="text-transform: lowercase;">m²</span>
+                                                                    </span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div
+                                                        class="col-md-4 col-lg-3 col-xl-3 my-auto card__image__footer-first">
+                                                        <div class="card__image__footer">
+
+                                                            <ul class="list-inline my-auto">
+                                                                <li class="list-inline-item name">
+
+                                                                    Mức giá
+
+                                                                </li>
+
+
+                                                            </ul>
+                                                            <ul class="list-inline my-auto ml-auto price">
+                                                                <li class="list-inline-item ">
+
+                                                                    <h6>{{item.mucGia}} {{item.donViGia}}</h6>
+                                                                </li>
+
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="tab-pane fade show active" id="pills-tab-two" role="tabpanel"
+                                    aria-labelledby="pills-tab-two">
+                                    <div *ngFor="let item of list; index as i">
+                                        <div class="col-md-4 col-lg-4" style="float: left;">
+                                            <div class="card__image card__box-v1"><a
+                                                    routerLink="/post/detail/{{item.maBaiDang}}">
+                                                    <div class="card__image-header h-250">
+
+                                                        <div class="ribbon text-capitalize"
+                                                            style="background-color: green;"
+                                                            *ngIf="item.loaiBaiDang==1">TIN VIP
+                                                        </div>
+                                                        <img src="../../../assets/img/{{i+1}}.jpg" alt=""
+                                                            class="img-fluid w100 img-transition">
+                                                    </div>
+                                                </a>
+                                                <div class="card__image-body">
+                                                    <h6 class="text-capitalize">
+                                                        <a
+                                                            routerLink="/post/detail/{{item.maBaiDang}}">{{item.tieuDe.substr(0,45)}}...</a>
+                                                    </h6>
+
+                                                    <p class="text-capitalize">
+                                                        <i class="fa fa-map-marker"></i>
+                                                        {{item.diaChiChiTiet.substr(0,35)}}...
+                                                    </p>
+                                                    <ul class="list-inline card__content">
+                                                        <li class="list-inline-item">
+                                                            <span>
+                                                                Diện tích <br>
+                                                                <i class="fa fa-map"></i> {{item.dienTich}}
+                                                                <span style="text-transform: lowercase;">m²</span>
+                                                            </span>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="card__image-footer">
+                                                    <ul class="list-inline my-auto ml-auto">
+                                                        <li class="list-inline-item">
+
+                                                            <h6>{{item.mucGia}} {{item.donViGia}}</h6>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="cleafix"></div>
+                                </div>
+
+
+
+                            </div>
+                            <!-- END FILTER VERTICAL -->
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div style="top: 20px;position: relative;margin-left: 40%;">
+            <ngb-pagination [collectionSize]="totalItems" [pageSize]="6" [(page)]="page" [maxSize]="3" [rotate]="true"
+                (pageChange)="loadPage($event)">
+            </ngb-pagination>
+        </div>
+    </div>
+</section>
+<!-- END LISTING LIST -->
