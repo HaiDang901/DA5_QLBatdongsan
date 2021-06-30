@@ -33,6 +33,11 @@ export class PostService {
     return this.http.get(url);
   }
 
+  getTuongTu(){
+    const url = `${this.API_URL}/getTuongTu`;
+    return this.http.get(url);
+  }
+
   postlist(url: string, obj: any) {
     const body = JSON.stringify(obj);
     let cloneHeader: any = {};

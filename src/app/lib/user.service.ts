@@ -46,4 +46,18 @@ export class UserService {
     const url = `${this.API_URL}/getUser/${id}`;
     return this.http.get(url);
   }
+  Getloai(x: any) {
+    const url = `${this.API_URL}/getLoai/${x}`;
+    return this.http.get(url);
+  }
+  add(userRegister: any): Observable<number> {
+    const url = `${this.API_URL}/addUser`;
+    var body = JSON.stringify(userRegister);
+    return this.http.post<any>(url, body, httpOptions);
+  }
+  
+  Change(x: any) {
+    const url = `${this.API_URL}/TrangThai/${x}`;
+    return this.http.get(url);
+  }
 }

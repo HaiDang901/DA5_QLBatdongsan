@@ -29,13 +29,14 @@
     </div>
 
 </div>
-<div class="single__detail-area">
+<div class="single__detail-area" >
     <div class="container">
         <div class="row">
             <div class="col-md-9 col-lg-8">
                 <div class="single__detail-area-title">
                     <h3 class="text-capitalize">{{post.tieuDe}}</h3>
                     <p> {{post.diaChiChitiet}}</p>
+                    <i class="fa fa-eye" aria-hidden="true"></i> {{post.luotXem}}
                 </div>
             </div>
             <div class="col-md-3 col-lg-4">
@@ -55,7 +56,7 @@
 <!-- END SLIDER IMAGE DETAIL -->
 
 <!-- SINGLE DETAIL -->
-<section class="single__Detail">
+<section class="single__Detail" style="padding: 0px;">
     <div class="container">
         <div class="row">
             <div class="col-lg-8">
@@ -72,7 +73,7 @@
                         <div class="clearfix"></div>
 
                         <!-- PROPERTY DETAILS SPEC -->
-                        <div class="single__detail-features">
+                        <div class="single__detail-features" style="    background: azure; padding-left: 25px;">
                             <h5 class="text-capitalize detail-heading">Thông tin Tài Sản</h5>
                             <!-- INFO PROPERTY DETAIL -->
                             <div class="property__detail-info">
@@ -82,8 +83,10 @@
                                             <li><b>ID:</b> RV151</li>
                                             <li><b>Giá:</b> $484,400</li>
                                             <li><b>Diện tích tim tường:</b> 1466 Sq Ft</li>
-                                            <li><b>Phòng ngủ:</b> 4</li>
-                                            <li><b>Phòng tắm:</b> 2</li>
+                                            <li><b>Số tầng:</b> {{post.soTang}}</li>
+                                            <li><b>Số phòng ngủ: </b> {{post.soPhongNgu}}</li>
+                                            <li><b>Số phòng tắm:</b> {{post.soPhongTam}}</li>
+                                            <li><b>Số phòng WC:</b> {{post.soPhongWC}}</li>
                                         </ul>
                                     </div>
                                     <div class="col-md-6 col-lg-6">
@@ -93,6 +96,8 @@
                                             <li><b>Xây dựng:</b> 2019-01-09</li>
                                             <li><b>Loại tài sản:</b> Biệt thự, Căn hộ</li>
                                             <li><b>Tình trạng:</b> Cho thuê</li>
+                                            <li><b>Hướng nhà:</b> {{post.huongNha}}</li>
+                                            <li><b>Hướng ban công:</b> {{post.huongBanCong}}</li>
                                         </ul>
                                     </div>
                                 </div>
@@ -116,15 +121,42 @@
                                             <li><b>Khác...</b></li>
                                         </ul>
                                     </div>
-                                </div>
-
+                                </div>      
                             </div>
                             <!-- END INFO PROPERTY DETAIL -->
                         </div>
                         <!-- END PROPERTY DETAILS SPEC -->
                         <div class="clearfix"></div>
 
-                        
+                        <!-- <iframe src="https://www.facebook.com/plugins/comment_embed.php?href=https%3A%2F%2Fwww.facebook.com%2Fzuck%2Fposts%2F10102577175875681%3Fcomment_id%3D1193531464007751%26reply_comment_id%3D654912701278942&width=560&include_parent=false&height=134&appId"
+                         width="700" height="134" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe> -->
+                         <div style="margin-top: 56px;border: 1px solid white;background: rgba(255,255,255, 0.3);">
+                            <div class="fb-comments fb_iframe_widget fb_iframe_widget_fluid_desktop" 
+                                    data-href="http://localhost:63877/post/detail/BD000052" 
+                                    data-width="700" 
+                                    data-numposts="5" 
+                                    fb-xfbml-state="rendered" 
+                                    fb-iframe-plugin-query="app_id=271903206793496&amp;container_width=1077&amp;height=100&amp;href=http%3A%2F%2Flocalhost%3A8081%2FMuaBanNha%2Fsingle.jsp%3FproductID%3D3&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v3.2&amp;width=700">
+                                    <span style="vertical-align: bottom; width: 700px; height: 340px;">
+                                        <iframe name="f3aa7f8234bd14c" 
+                                            width="700px" 
+                                            height="300px" 
+                                            data-testid="fb:comments Facebook Social Plugin" 
+                                            title="fb:comments Facebook Social Plugin" 
+                                            frameborder="0" 
+                                            allowtransparency="true" 
+                                            allowfullscreen="true" 
+                                            scrolling="no" 
+                                            allow="encrypted-media" 
+                                            src="https://www.facebook.com/v3.2/plugins/comments.php?app_id=271903206793496&amp;channel=https%3A%2F%2Fstaticxx.facebook.com%2Fx%2Fconnect%2Fxd_arbiter%2F%3Fversion%3D46%23cb%3Df3d70270066436%26domain%3Dlocalhost%26origin%3Dhttp%253A%252F%252Flocalhost%253A8081%252Ff1672220b69b94%26relation%3Dparent.parent&amp;container_width=1077&amp;height=100&amp;href=http%3A%2F%2Flocalhost%3A8081%2FMuaBanNha%2Fsingle.jsp%3FproductID%3D3&amp;locale=vi_VN&amp;numposts=5&amp;sdk=joey&amp;version=v3.2&amp;width=700" 
+                                            style="border: none; visibility: visible; width: 700px; height: 306px;" 
+                                            class="">
+                                        </iframe>
+                                    </span>
+                                </div>
+                            <div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- END DESCRIPTION -->
@@ -134,7 +166,7 @@
                     <!-- PROFILE AGENT -->
                     <div class="profile__agent mb-30">
                         <div class="profile__agent__group">
-                            <h4>Liên hệ</h4>
+                            <h4 style=" margin: 20px 30px 0; color: red;">Liên hệ</h4>
                             <div class="profile__agent__header">
                                 <div class="profile__agent__header-avatar" style="display: contents;">
                                     <ul class="list-unstyled mb-0">
@@ -187,48 +219,40 @@
             <div class="col-lg-12">
                 <div class="similiar__item">
                     <h6 class="text-capitalize detail-heading">
-                        Bài đăng tương tự
+                        Bài đăng mới
                     </h6>
                     <div class="similiar__property-carousel owl-carousel owl-theme">
-                        <div class="item">
+                        <div class="item" *ngFor="let x of list, index as i">
                             <!-- ONE -->
                             <div class="card__image">
                                 <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/1.jpg" alt="" class="img-fluid w100 img-transition">
+                                    <a routerLink="/post/detail/{{x.maBaiDang}}">
+                                        <div class="ribbon text-capitalize"
+                                            style="background-color: green;"
+                                            *ngIf="x.loaiBaiDang==1">TIN VIP
+                                        </div>
+                                        <img src="../../../assets/img/{{i+1}}.jpg" alt=""
+                                            class="img-fluid w100 img-transition">
+                                    </a>
                                 </div>
                                 <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Vinhomes Smart City</a>
+                                    <h6>
+                                        <a
+                                            routerLink="/post/detail/{{x.maBaiDang}}">{{x.tieuDe.substr(0,40)}}...
+                                        </a>
                                     </h6>
 
                                     <p class="text-capitalize">
                                         <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <p>
-                                        Vinhomes Smart City - Thành phố quốc tế của những công dân toàn cầu. Đại đô thị
+                                        {{x.diaChiChiTiet}}
                                     </p>
                                     <ul class="list-inline card__content">
                                         <li class="list-inline-item">
 
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
+                                            <span>Diện tích <br>
+                                                <i class="fa fa-map"></i> {{x.dienTich}}
+                                                <span
+                                                    style="text-transform: lowercase;">m²</span>
                                             </span>
                                         </li>
                                     </ul>
@@ -246,431 +270,7 @@
                                     <ul class="list-inline my-auto ml-auto">
                                         <li class="list-inline-item">
 
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- TWO -->
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/2.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Vinhomes Ocean Park</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <p>Vinhomes Ocean Park – Thành phố biển hồ trong lòng Hà Nội. Đại đô thị đẳng cấp</p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Bùi Huy Đức <br>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- THREE -->
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/3.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Vinhomes Grand Park</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <p>
-                                        Vinhomes Grand Park là Đại đô thị thông minh mang đẳng cấp quốc tế
-                                    </p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Bùi Huy Đức <br>
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- FOUR -->
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/4.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Vinhomes Star City</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <p>Mang phong cách Châu Âu sang trọng và đẳng cấp bậc nhất Thanh Hóa, Vinhomes</p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Bùi Huy Đức <br>
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- FIVE -->
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/5.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Vinhomes West Point</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <p>Tại nơi giao thoa của dòng chảy đô thị hiện đại, trên con đường “huyết mạch”</p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Bùi Huy Đức <br>
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- SIX -->
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/6.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Vinhomes Marina</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <p>
-                                        Với vị trí trung tâm thuận tiện, Shop TMDV Vinhomes Marina được CĐT Vinhomes
-                                    </p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Bùi Huy Đức <br>
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/7.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">The Citizen Apartment 5th Floor</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Nguyễn Hải Đăng <br>
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-
-                                            <h6 class="text-primary">$350.000</h6>
-                                        </li>
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <!-- SEVEN -->
-                            <div class="card__image">
-                                <div class="card__image-header h-250">
-                                    <div class="ribbon text-capitalize">featured</div>
-                                    <img src="../../../assets/img/8.jpg" alt="" class="img-fluid w100 img-transition">
-                                </div>
-                                <div class="card__image-body">
-                                    <h6 class="text-capitalize">
-                                        <a href="#">Family Home For Sale</a>
-                                    </h6>
-
-                                    <p class="text-capitalize">
-                                        <i class="fa fa-map-marker"></i>
-                                        west flaminggo road, las vegas
-                                    </p>
-                                    <ul class="list-inline card__content">
-                                        <li class="list-inline-item">
-
-                                            <span>
-                                                <i class="fa fa-bath"></i> 2
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-bed"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-inbox"></i> 3
-                                            </span>
-                                        </li>
-                                        <li class="list-inline-item">
-                                            <span>
-                                                <i class="fa fa-map"></i> 4300 sq ft
-                                            </span>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="card__image-footer">
-                                    <ul class="list-inline my-auto">
-                                        <li class="list-inline-item">
-                                            <a href="#">
-                                                Nguyễn Đình Duy
-                                            </a>
-
-                                        </li>
-
-                                    </ul>
-                                    <ul class="list-inline my-auto ml-auto">
-                                        <li class="list-inline-item">
-
-                                            <h6 class="text-primary">$350.000</h6>
+                                            <h6 class="text-primary">{{x.mucGia}} {{x.donViGia}}</h6>
                                         </li>
 
                                     </ul>

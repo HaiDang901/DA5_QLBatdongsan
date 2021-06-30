@@ -12,7 +12,11 @@ export const homeRoute: Routes = [
   {
     path: '',
     component: HomeComponent,
-  }
+  },
+  {
+    path: 'new',
+    component: NewComponent,
+  },
 ];
 
 @NgModule({

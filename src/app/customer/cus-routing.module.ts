@@ -7,6 +7,7 @@ import { AuthGuard } from '../lib/auth.guard';
 import { NaptienComponent } from './naptien/naptien.component';
 import { ListPostComponent } from './list-post/list-post.component';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
+import { RegisterComponent } from './register/register.component';
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+  },
+  {
+    path: 'register', 
+    component: RegisterComponent
   }
 ];
 @NgModule({
