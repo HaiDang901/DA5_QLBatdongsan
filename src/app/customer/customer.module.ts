@@ -13,6 +13,7 @@ import { CalendarModule} from 'primeng/calendar';
 import { ButtonModule} from 'primeng/button';
 import { NaptienComponent } from './naptien/naptien.component';
 import { ListPostComponent } from './list-post/list-post.component';
+import {EditorModule} from 'primeng/editor';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TransactionHistoryComponent } from './transaction-history/transaction-history.component';
 import { AddNewComponent } from './add-new/add-new.component';
@@ -38,6 +39,7 @@ import { RegisterComponent } from './register/register.component';
     InputTextareaModule,
     FileUploadModule,
     HttpClientModule,
+    EditorModule,
     CalendarModule,
     ButtonModule,
     NgbModule
